@@ -79,6 +79,8 @@ function formatLocation(arr, x) {
 	return formattedLocation;
 }
 
+
+
 function processInput() {
 	const userInput = searchField.value;
 	// Splits the location into an array without whitepace
@@ -88,10 +90,11 @@ function processInput() {
 		.map(word => word.trim());
 
 	if (location.length > 1) {
-		if (location[1].length === 2) {
+		if (location[1].length > 2) {
 			const enteredState = location[1];
-			location.pop();
-			location.push(states[enteredState]);
+			console.log(enteredState);
+			location.pop()
+			location.push(stateFormat(enteredState))
 			console.log(location);
 		}
 	}
@@ -105,10 +108,10 @@ function processInput() {
 
 async function fetchWeather([city, state]) {
 	const response = await fetch(
-		`https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&units=imperial&appid=${OPEN_WEATHER_API_KEY}`
+		`https://api.openweathermap.org/data/2.5/weather?q=${city},${state},US&units=imperial&appid=${OPEN_WEATHER_API_KEY}`
 	);
 	const data = await response.json();
-
+		console.log(data);
 	if (data?.message) {
 		alert(`${data.message}`);
 	} else {
@@ -209,4 +212,11 @@ function calcWindDirection(num) {
 	if (num >= 303.76 && num <= 326.25) return (dir = 'NW');
 	if (num >= 326.25 && num <= 348.74) return (dir = 'NNW');
 	if (num <= 11.25 || num >= 0 || num >= 348.75) return (dir = 'N');
+}
+
+function stateFormat(str) {
+	const state = Object.entries(states).filter(arr => {
+		return (arr[1] === str);
+	})
+	return state[0][0];
 }
