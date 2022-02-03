@@ -6,15 +6,8 @@
 	"scripts": {
 		"deploy": "gh-pages -d dist"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/deppes365/Weather-App.git"
-	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/deppes365/Weather-App/issues"
-	},
 	"homepage": "https://deppes365.github.io/weatherapp"
 }
