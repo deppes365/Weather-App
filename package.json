@@ -9,5 +9,8 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"homepage": "https://deppes365.github.io/weatherapp"
+	"homepage": "https://deppes365.github.io/weatherapp",
+	"dependencies": {
+		"gh-pages": "^3.2.3"
+	}
 }
