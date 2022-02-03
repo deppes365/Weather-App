@@ -1,0 +1,213 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "poppins";
+}
+
+nav {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #6EA4BF;
+}
+
+.logo {
+    flex-basis: 30%;
+    color: white;
+}
+
+form {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-right: 64px;
+}
+
+.search-field {
+   width: 100%;
+   height: 2rem;
+   border: 0;
+   border-radius: 30px 0 0 30px;
+   background-color: white;
+   padding: 0.25rem 0.5rem;
+}
+
+.search-field::placeholder {
+    color: grey;
+}
+
+.search-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    height: 2rem;
+    width: 4rem;
+    border: 0;
+    border-radius: 0 30px 30px 0;
+    cursor: pointer;
+}
+
+
+
+.cards-container {
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #C2EFEB;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 25rem;
+    padding: 1rem;
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 3px 15px 3px rgba(0,0,0,0.38); 
+    box-shadow: 5px 3px 15px 3px rgba(0,0,0,0.38);
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.5s ease;
+    position: relative;
+}
+
+.card.show {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.card .location-title {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+    text-align: center;
+}
+
+.description {
+    font-weight: 400;
+}
+
+.card .current-temp {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    font-weight: 400;
+}
+
+.card .feels-like {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.card .hi-lo {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.card .fas.fa-times {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover .fas.fa-times {
+    opacity: 0.3;
+}
+
+.message-box {
+    text-align: center;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 30px;
+    -webkit-box-shadow: 5px 3px 15px 3px rgba(0,0,0,0.38); 
+    box-shadow: 5px 3px 15px 3px rgba(0,0,0,0.38);
+}
+
+.message-box h2 {
+    font-weight: 400;
+}
+
+@media only screen and (max-width: 768px) { 
+    .logo {
+        flex-basis: 40%;
+    }
+    form {
+        flex-basis: 60%;
+    }
+
+    .card {
+        width: 15rem;
+        height: auto;
+    }
+    .card .location-title {
+        font-size: 1rem;
+        
+    }
+    
+    .card .current-temp {
+        font-size: 1.5rem;
+    }
+    
+    .card .feels-like {
+        font-size: 1rem;
+    }
+    
+    .card .hi-lo {
+        font-size: 1rem;
+    }
+    
+    .card .fas.fa-times { 
+        font-size: 1rem;
+    }
+
+    .message-box {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 80%;
+    }
+    .message-box {
+        width: 100%;
+    }
+
+    .card .fas.fa-times {
+        opacity: 0.3;
+    }
+
+}
+
+@media only screen and (max-width: 520px) {
+    .logo h1 {
+        font-size: 1rem;
+    }
+
+    .message-content {
+        font-size: 1.2rem;
+    }
+}
